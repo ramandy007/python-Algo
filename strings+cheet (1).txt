@@ -1,0 +1,209 @@
+#Creating a String
+
+String str1 = “Welcome”; // Using literal
+
+String str2 = new String(”Edureka”); // Using new keyword
+
+#String Pool
+
+String str1 = "abc";
+     String str2 = "abc";
+    
+   System.out.println(str1 == str2);
+   System.out.println(str1 == "abc");
+
+###String Conversions
+
+#String to Int Conversion
+
+String str="123";
+	int inum1 = 100; 
+	int inum2 = Integer.parseInt(str);// Converting a string to int
+
+#String to Double conversion
+
+String str = "100.222";
+	double dnum = Double.parseDouble(str); //displaying the value of variable dnum
+
+#Int to String Conversion
+
+int var = 111;
+      String str = String.valueOf(var);     
+      System.out.println(555+str); // Conversion of Int to String
+
+#Double to String Conversion
+
+double dnum = 88.9999;  //double value
+String str = String.valueOf(dnum);  //conversion using valueOf() method
+
+###Important Programs
+
+Finding duplicate characters in a String
+This program helps you to find out the duplicate characters in a String.
+
+Removing Trailing Spaces of a String
+This program tells you how to trim trailing spaces from the string but not leading spaces.
+
+...
+
+public void countDupChars(String str)
+{
+//Create a HashMap 
+    Map<Character, Integer> map = new HashMap<Character, Integer>(); 
+     //Convert the String to char array
+    char[] chars = str.toCharArray();
+for(Character ch:chars){
+      if(map.containsKey(ch)){
+         map.put(ch, map.get(ch)+1);
+      } else {
+         map.put(ch, 1);
+        }
+   }
+Set<Character> keys = map.keySet(); //Obtaining set of keys  
+public static void main(String a[]){
+Details obj = new Details();
+System.out.println("String: Edureka"); 
+obj.countDupChars("Edureka"); 
+System.out.println("
+String: StringCheatSheet"); 
+obj.countDupChars("StringCheatSheet"); 
+ }
+} 
+
+...
+
+int len = str.length();
+    for( ; len > 0; len--)
+    {
+      if( ! Character.isWhitespace( str.charAt( len - 1)))
+         break;
+    }
+    return str.substring( 0, len);
+
+#StringJoiner Class
+
+StringJoiner mystring = new StringJoiner("-"); 
+// Passing Hyphen(-) as delimiter   
+mystring.add("edureka");   
+// Joining multiple strings by using add() method 
+mystring.add("YouTube");   
+
+#String reverse using Recursion
+
+class StringReverse 
+{ 
+ /* Function to print reverse of the passed string */
+    void reverse(String str) 
+    { 
+        if ((str==null)||(str.length() <= 1)) 
+           System.out.println(str); 
+        else
+        { 
+            System.out.print(str.charAt(str.length()-1)); 
+            reverse(str.substring(0,str.length()-1)); 
+        } 
+    } 
+    /* Driver program to test above function */
+    public static void main(String[] args){ 
+        String str = "Edureka for Java"; 
+        StringReverse obj = new StringReverse(); 
+        obj.reverse(str); 
+    }     
+}
+
+#Reversing a String entered by user
+
+String str = "Welcome To Edureka";
+String[] strArray = str.split(" ");
+
+for (String temp: strArray)
+{
+System.out.println(temp);
+  for(int i=0; i<3; i++)
+  {
+char[] s1 = strArray[i].toCharArray();
+for (int j = s1.length-1; j>=0; j--) 
+{
+System.out.print(s1[j]);
+}
+
+#Now, interfaces that are implemented by String, StringBuffer and StringBuilder are shown in the below code.
+
+//String implements all the 3 interfaces
+public final class String extends Object
+implements Serializable, Comparable<String>, CharSequence
+
+//StringBuffer implements Serializable & CharSequence interfaces
+public final class StringBuffer extends Object
+implements Serializable, CharSequence
+
+//StringBuilder implements Serializable & CharSequence interfaces
+public final class StringBuilder extends Object
+implements Serializable, CharSequence
+
+#String vs StringBuffer vs StringBuilder
+
+class Edureka{ 
+    // Concatenates to String 
+    public static void concat1(String s1) 
+    { 
+        s1 = s1 + "edurekablog"; 
+    } 
+    // Concatenates to StringBuilder 
+    public static void concat2(StringBuilder s2) 
+    { 
+        s2.append("edurekablog"); 
+    } 
+    // Concatenates to StringBuffer 
+    public static void concat3(StringBuffer s3) 
+    { 
+        s3.append("edurekablog"); 
+    } 
+   public static void main(String[] args) 
+    { 
+        String s1 = "Andvideos"; 
+        concat1(s1);  // s1 is not changed 
+        System.out.println("String: " + s1); 
+        StringBuilder s2 = new StringBuilder("Andvideos"); 
+        concat2(s2); // s2 is changed 
+        System.out.println("StringBuilder: " + s2); 
+        StringBuffer s3 = new StringBuffer("Andvideos"); 
+        concat3(s3); // s3 is changed 
+        System.out.println("StringBuffer: " + s3); 
+    } 
+}
+
+###String Methods
+
+Few of the most important and frequently used String methods are listed below:
+
+str1==str2 //compares address;
+String newStr = str1.equals(str2); //compares the values
+String newStr = str1.equalsIgnoreCase() //compares the values ignoring the case
+newStr = str1.length() //calculates length
+newStr = str1.charAt(i) //extract i'th character
+newStr = str1.toUpperCase() //returns string in ALL CAPS
+newStr = str1.toLowerCase() //returns string in ALL LOWERCASE
+newStr = str1.replace(oldVal, newVal) //search and replace
+newStr = str1.trim() //trims surrounding whitespace
+newStr = str1.contains("value"); //check for the values
+newStr = str1.toCharArray(); // convert String to character type array
+newStr = str1.IsEmpty(); //Check for empty String
+newStr = str1.endsWith(); //Checks if string ends with the given suffix
+
+#Immutable Strings
+In Java, string objects are immutable. Immutable simply means unmodifiable or unchangeable.
+
+
+class Stringimmutable{  
+
+ public static void main(String args[]){  
+
+   String s="JavaStrings";  
+   s.concat(" CheatSheet");
+  System.out.println(s); 
+
+}
+}
+
+
